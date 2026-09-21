@@ -11,10 +11,10 @@ from matplotlib import pyplot as plt
 from matplotlib.gridspec import GridSpec
 from scipy.optimize import minimize
 # Project imports
-from LPSDIO import LPSDOutput, LPSDJSONIO
-import models  # only to be called in BkgModel
-import stats
-import hist
+from ..LPSDIO import LPSDOutput, LPSDJSONIO
+from . import models  # only to be called in BkgModel
+from . import stats
+from . import hist
 
 
 def parse_args():

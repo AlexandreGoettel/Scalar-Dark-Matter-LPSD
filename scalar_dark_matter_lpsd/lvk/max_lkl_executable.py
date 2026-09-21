@@ -7,9 +7,9 @@ from scipy.optimize import minimize
 from scipy import constants
 import numpy as np
 # Project imports
-import stats
-from LPSDIO import LPSDDataGroup, LPSDJSONIO, get_A_star, MaxLKLIO
-from fit_background import bkg_model
+from . import stats
+from ..LPSDIO import LPSDDataGroup, LPSDJSONIO, get_A_star, MaxLKLIO
+from .fit_background import bkg_model
 
 
 def parse_args():

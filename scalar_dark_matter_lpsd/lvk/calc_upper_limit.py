@@ -8,8 +8,8 @@ from scipy.interpolate import interp1d
 from scipy.optimize import minimize
 from scipy import constants
 
-from LPSDIO import MaxLKLIO, get_A_star
-from stats import cumf_q_mu_scalar, kde_smoothing, RHO_LOCAL
+from ..LPSDIO import MaxLKLIO, get_A_star
+from .stats import cumf_q_mu_scalar, kde_smoothing, RHO_LOCAL
 
 PATH = os.path.abspath(os.path.split(os.path.split(__file__)[0])[0])
 

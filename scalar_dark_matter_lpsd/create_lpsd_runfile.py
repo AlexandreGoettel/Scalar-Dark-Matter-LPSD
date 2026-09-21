@@ -5,7 +5,7 @@ import argparse
 import numpy as np
 import h5py
 # Project imports
-from utils import LPSDVars
+from .utils import LPSDVars
 
 
 BASE_PATH = os.path.dirname(__file__)
@@ -73,8 +73,7 @@ def parse_args():
 def write_template(args, infile, ofile, permissions=0o664, **kwargs):
     """Write the args-substituted contents of infile to outfile."""
     infile = os.path.join(BASE_PATH, "templates", infile)
-    with open(os.path.join(os.path.split("__file__")[0],
-                           infile), "r") as _f:
+    with open(infile, "r") as _f:
         contents = _f.read()
 
     print(f"Writing to '{ofile}'..")
@@ -185,7 +184,7 @@ def main(args):
                        prefix=prefix)
 
         write_template(args, "combine_wrapper.template", combine_wrapper, permissions=0o775,
-                       script_path=os.path.join(BASE_PATH, "combine_lpsd_output.py"),
+                       script_path=os.path.join(BASE_PATH, "lvk", "combine_lpsd_output.py"),
                        prefix=prefix)
 
         # Write the DAG file
@@ -209,7 +208,7 @@ def main(args):
                        outdir=os.path.dirname(args["output_file"]),
                        prefix=prefix)
         write_template(args, "combine_wrapper.template", combine_wrapper, permissions=0o775,
-                       script_path=os.path.join(BASE_PATH, "combine_lpsd_output.py"),
+                       script_path=os.path.join(BASE_PATH, "lvk", "combine_lpsd_output.py"),
                        prefix=prefix)
         # DAG
         prefix, _ = os.path.splitext(args["submit_file"])

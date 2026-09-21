@@ -4,7 +4,7 @@ import argparse
 import glob
 import numpy as np
 # Project imports
-from LPSDIO import LPSDOutput
+from ..LPSDIO import LPSDOutput
 
 
 BASE_PATH = os.path.split(os.path.abspath(__file__))[0]
@@ -163,10 +163,10 @@ def main(rundir=None, outdir=None, prefix=None, ana_fmin=10, ana_fmax=5000, freq
     isolated_prefix = os.path.split(prefix)[-1]
     run_prefix = os.path.abspath(os.path.join(rundir, isolated_prefix))
     path_to_wrapper = f"{run_prefix}_wrapper.sh"
-    path_to_executable = os.path.join(BASE_PATH, "max_lkl_executable.py")
+    path_to_executable = os.path.join(BASE_PATH, "lvk", "max_lkl_executable.py")
     path_to_submitfile = f"{run_prefix}.submit"
     path_to_combine_wrapper = f"{run_prefix}_combine_wrapper.sh"
-    path_to_combine_exe = os.path.join(BASE_PATH, "combine_maxlkl_output.py")
+    path_to_combine_exe = os.path.join(BASE_PATH, "lvk", "combine_maxlkl_output.py")
     path_to_combine_submit = f"{run_prefix}_combine.submit"
     path_to_dag = f"{run_prefix}_dag.submit"
 

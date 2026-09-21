@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
 # Project imports
-from utils import LPSDVars
+from .utils import LPSDVars
 
 
 def get_A_star(tf_path):

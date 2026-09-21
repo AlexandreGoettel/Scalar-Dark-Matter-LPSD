@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# Declare data file, must be hdf5 file
+# Declare input file, must be hdf5 file
 filename=
+# Name of dataset within the file
 dataset=
 
-# Declare number of seconds data in file
+# Declare number of seconds of data in file
 TSlength=
 
 # Declare start, end, and sampling frequencies
@@ -23,6 +24,7 @@ constQ_eps=1e-5
 outfilename=
 fft_file=
 
+# Point this to your install dir
 $path_to_lpsd_exec \
 	-A 2 \
 	-b 0 \

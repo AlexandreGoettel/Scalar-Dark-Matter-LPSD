@@ -9,9 +9,9 @@ from scipy import constants
 from scipy.optimize import minimize
 from multiprocessing import Pool
 
-import stats
-from LPSDIO import MaxLKLIO, LPSDDataGroup, LPSDJSONIO, get_A_star
-from fit_background import bkg_model
+from . import stats
+from ..LPSDIO import MaxLKLIO, LPSDDataGroup, LPSDJSONIO, get_A_star
+from .fit_background import bkg_model
 
 
 def parse_args():
@@ -284,4 +284,5 @@ def main(max_lkl_path, data_path, bkg_path, tf_path,
         global_mngr.plot_candidate(frequency, lambda_c)
         plt.savefig(os.path.join(out_folder, f"candidate_{i}.pdf"))
 
-main(**parse_args())
+if __name__ == '__main__':
+    main(**parse_args())
