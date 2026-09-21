@@ -2,6 +2,7 @@
 #define __IO_h
 
 // Custom imports
+#include "config.h"
 #include "hdf5.h"
 
 // Declarations
@@ -18,6 +19,7 @@ struct hdf5_contents {
     hsize_t rank;
     hsize_t *dims;
 };
+int hdf5_file_exists(const char*);
 void read_hdf5_file(struct hdf5_contents *contents, char*, char*);
 void open_hdf5_file(struct hdf5_contents *contents, char*, char*, hsize_t, hsize_t*);
 void write_to_hdf5(struct hdf5_contents*, double*, hsize_t*, hsize_t*, hsize_t, hsize_t*);
