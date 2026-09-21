@@ -6,19 +6,23 @@
 #include "netlibi0.h"
 #include "genwin.h"
 
-/* genwin.c created by merging sbwin.c and ghhwin.c to generate windows for 
+/* genwin.c created by merging sbwin.c and ghhwin.c to generate windows for
    LPSD and FFT usage, Michael Troebs, 05/2004 */
 
 /* sbwin.c tfwin.c modified to provide smallest useful bin for each window */
 
 /* tfwin.c - ghhwin.c modified for 'tf' usage (make sin-cos-window array) */
 
-/* ghhwin.c - make window functions for Fourier spectral analysis 
-Gerhard Heinzel AEI 03/2003 
+/* ghhwin.c - make window functions for Fourier spectral analysis
+Gerhard Heinzel AEI 03/2003
 All rights reserved */
 
 /*
- * Copyright (C) 2026 Alexandre Goettel
+ * Permission to use and adapt this code under a GPL license was provided in https://github.com/philrelton/Scalar-Dark-Matter-LPSD,
+   which this repository is based on.
+   This file was modified to include the analytical get_kernel method, along with minor wrappers and speed-ups.
+
+   Copyright (C) 2026 Alexandre Goettel
  *
  * License: GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>
  * Contact: Alexandre Goettel <alexandre.goettel@nottingham.ac.uk>
