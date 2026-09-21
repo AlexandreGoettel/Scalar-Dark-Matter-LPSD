@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scalar_dark_matter_lpsd"
+version = "1.0.0"
+description = "Scalar Dark Matter LPSD pipeline"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Alexandre Goettel", email = "alexandre.goettel@nottingham.ac.uk"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy",
+    "h5py",
+    "findiff",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+create_lpsd_runfile = "scalar_dark_matter_lpsd.create_lpsd_runfile:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scalar_dark_matter_lpsd*"]
+
+[tool.setuptools.package-data]
+scalar_dark_matter_lpsd = ["templates/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["scalar_dark_matter_lpsd/tests"]

@@ -111,7 +111,7 @@ def exponential_separator(Jdes, n_batches, theta=2e-6):
     return N
 
 
-def main(args):
+def create_runfile(args):
     """
     Generates a LPSD run file and, optionally, condor submit file.
 
@@ -226,5 +226,9 @@ def main(args):
         print(f"Wrote DAG file to '{dagfile}'")
 
 
+def main():
+    create_runfile(parse_args())
+
+
 if __name__ == '__main__':
-    main(parse_args())
+    main()
