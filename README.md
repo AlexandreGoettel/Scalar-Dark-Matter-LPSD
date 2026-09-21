@@ -3,16 +3,16 @@
 
 This repository contains the code described in https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.133.101001 and https://www.nature.com/articles/s41598-025-33428-2.
 
+## Licensing Notes
+
 The code in LPSD/ is a modified version of the code found in [https://github.com/philrelton/Scalar-Dark-Matter-LPSD](https://github.com/philrelton/Scalar-Dark-Matter-LPSD) with the same [GPLv3 Licence](LICENSE). Large changes are indicated in the source code. Our main modifications of the code are:
  - new core method named "ConstantQ"
  - An out-of-core FFT algorithm was developed to that end and included within the code.
  - speed-up of the core LPSD calculation
  - support for HDF5 input, replacing plain text
 
-## Licensing Notes
-
-- The LPSD C code includes `argp.h` and `argp.c` from the GNU C Library, which are licensed under **LGPL-2.1-or-later** (compatible with GPLv3).
-- All other code is licensed under **GPLv3-or-later**.
+The LPSD C code includes `argp.h` and `argp.c` from the GNU C Library, which are licensed under **LGPL-2.1-or-later** (compatible with GPLv3).
+All other code is licensed under **GPLv3-or-later**.
 
 # How to cite this work
 If you do publish work using this code, please cite the original code's paper https://doi.org/10.1016/j.measurement.2008.04.004, and the new https://www.nature.com/articles/s41598-025-33428-2.
