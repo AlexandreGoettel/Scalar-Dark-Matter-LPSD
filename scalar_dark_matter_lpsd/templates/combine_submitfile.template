@@ -1,0 +1,21 @@
+Universe = vanilla
+Executable = $run_file
+Arguments = $outdir $prefix $outfile
+
+accounting_group = $accounting_group
+accounting_group_user = $accounting_group_user
+request_cpus = $request_cpus
+request_disk = $request_disk_GB GB
+request_memory = $request_memory_GB GB
+
+should_transfer_files = NO
++DESIRED_Sites = "nogrid"
++flock_local = True
+
+Output = ${outdir}/${prefix}_combine.out.$(Process)
+Error = ${outdir}/${prefix}_combine.err.$(Process)
+Log = ${outdir}/${prefix}_combine.log.$(Process)
+stream_output = True
+stream_error = True
+
+Queue 1

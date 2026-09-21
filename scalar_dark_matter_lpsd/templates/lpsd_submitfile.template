@@ -1,0 +1,21 @@
+Universe = vanilla
+Executable = $run_file
+Arguments = $(Process)
+
+accounting_group = $accounting_group
+accounting_group_user = $accounting_group_user
+request_cpus = $request_cpus
+request_disk = $request_disk_GB GB
+request_memory = $request_memory_GB GB
+
+should_transfer_files = NO
++DESIRED_Sites = "nogrid"
++flock_local = True
+
+Output = ${outdir}/$prefix.out.$(Process)
+Error = ${outdir}/$prefix.err.$(Process)
+Log = ${outdir}/$prefix.log.$(Process)
+stream_output = True
+stream_error = True
+
+Queue $n_batches

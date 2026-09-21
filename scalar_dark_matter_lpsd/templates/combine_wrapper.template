@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Call the python script
+${python_executable} ${script_path} --results-dir $1 --prefix $2 --output-file $3

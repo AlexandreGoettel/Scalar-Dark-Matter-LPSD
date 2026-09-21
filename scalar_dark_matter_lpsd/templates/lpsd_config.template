@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Declare data file, must be hdf5 file
+filename=$input_file
+dataset=$channel
+
+# Declare number of seconds data in file
+TSlength=$data_length
+
+# Declare start and end frequencies
+f_min=$fmin
+f_max=$fmax
+f_sample=$fsample
+
+# Declare 'Jdes': The total number of required frequency bins
+Nfreqs_full=$Jdes
+
+# Epsilon for block approximation (in percent)
+block_eps=$block_epsilon
+constQ_eps=$constQ_epsilon
+
+# n for maximum array size 2^n
+n_memory=$max_memory_power
+
+# Declare the number of frequencies in each batch
+# If a single job is required:
+# Set iter=0 and n=${full}
+indices=$index_string
+iter=${indices[$1]}
+batch_size=$((${indices[$1 + 1]} - ${indices[$1]}))
+
+# Declare the output file
+outfilename=$output_file.$1
+
+$path_to_lpsd_exec \
+	-A 2 \
+	-b 0 \
+	-e ${TSlength} \
+	-f ${f_sample} \
+	-h $method \
+	-i ${filename}\
+	-D ${dataset}\
+	-l 20 \
+	-n ${batch_size} \
+	-o ${outfilename} \
+	-r 0 \
+	-s ${f_min} \
+	-t ${f_max} \
+	-T \
+	-w -2 \
+	-p 238.13 \
+	-x 1 \
+	-N ${iter} \
+	-J ${Nfreqs_full} \
+	-E ${block_eps} \
+	-M ${n_memory} \
+	-R ${constQ_eps} \
+	-O ${fft_file}
