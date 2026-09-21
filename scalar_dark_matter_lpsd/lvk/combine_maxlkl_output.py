@@ -1,4 +1,10 @@
-"""Combine all maxlkl output jobs into a single .hdf5 output file."""
+"""Combine all maxlkl output jobs into a single .hdf5 output file.
+
+Copyright (C) 2026 Alexandre Goettel
+
+License: GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>
+Contact: Alexandre Goettel <alexandre.goettel@nottingham.ac.uk>
+"""
 import os
 import glob
 import argparse

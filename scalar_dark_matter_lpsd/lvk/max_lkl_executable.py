@@ -1,4 +1,10 @@
-"""Run q0 calculation - condor version."""
+"""Run q0 calculation - condor version.
+
+Copyright (C) 2026 Alexandre Goettel
+
+License: GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>
+Contact: Alexandre Goettel <alexandre.goettel@nottingham.ac.uk>
+"""
 import os
 import argparse
 from multiprocessing import Pool

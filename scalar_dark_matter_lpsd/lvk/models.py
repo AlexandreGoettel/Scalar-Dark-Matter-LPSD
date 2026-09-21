@@ -1,4 +1,10 @@
-"""Define models used by the different background-fitting procedures."""
+"""Define models used by the different background-fitting procedures.
+
+Copyright (C) 2026 Alexandre Goettel
+
+License: GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>
+Contact: Alexandre Goettel <alexandre.goettel@nottingham.ac.uk>
+"""
 import numpy as np
 from scipy.interpolate import interp1d, CubicSpline
 

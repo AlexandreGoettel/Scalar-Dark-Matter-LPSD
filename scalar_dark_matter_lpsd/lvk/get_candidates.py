@@ -1,3 +1,10 @@
+"""Find significant candidates in DM data from maximum likelihood estimates.
+
+Copyright (C) 2026 Alexandre Goettel
+
+License: GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>
+Contact: Alexandre Goettel <alexandre.goettel@nottingham.ac.uk>
+"""
 import os
 import argparse
 from tqdm import tqdm
